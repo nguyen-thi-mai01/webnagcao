@@ -8,7 +8,7 @@ router.get('/', async function(req, res, next) {
         const products = await Product.find().limit(5);
         res.render('index', { title: 'Shop Mèo Lười', products: products });
     } catch (error) {
-        console.error("Error fetching products:", error); // LOG LỖI CHI TIẾT (ĐÃ SỬA)
+        console.error("Error fetching products:", error); 
         res.render('index', { title: 'Shop Mèo Lười', products: [], error: error.message });
     }
 });
