@@ -1,0 +1,382 @@
+/* ... CSS hiện tại của bạn ... */
+
+/* --- Thiết kế lại giao diện --- */
+
+body {
+  font-family: 'Arial', sans-serif; /* Ví dụ: Chọn font chữ khác */
+  background-color: #ffe0e6; /* Vẫn giữ màu hồng nhạt làm nền */
+  color: #333; /* Màu chữ tối hơn để dễ đọc trên nền hồng */
+  margin: 0; /* Loại bỏ margin mặc định của body */
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px; /* Giới hạn chiều rộng nội dung trang */
+  margin: 0 auto; /* Căn giữa trang */
+  padding: 20px;
+}
+
+/* --- Header --- */
+nav {
+  background-color: #f8bbd0; /* Hồng nhạt cho navbar */
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: flex; /* Sử dụng flexbox để căn chỉnh các phần tử trong nav */
+  justify-content: space-between; /* Căn đều khoảng cách giữa logo và menu */
+  align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+nav .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #f06292; /* Màu hồng đậm cho logo */
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none; /* Loại bỏ dấu chấm mặc định của list */
+  padding: 0;
+  margin: 0;
+  display: flex; /* Hiển thị các menu item trên cùng một hàng */
+}
+
+nav li {
+  margin-left: 20px; /* Khoảng cách giữa các menu item */
+}
+
+nav a {
+  text-decoration: none;
+  color: #555; /* Màu chữ cho menu link */
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Hiệu ứng hover mượt mà */
+}
+
+nav a:hover {
+  background-color: #f48fb1; /* Hồng đậm hơn khi hover */
+  color: white;
+}
+
+
+/* --- Banner --- */
+.banner {
+  margin-bottom: 30px;
+  border-radius: 8px;
+  overflow: hidden; /* Ẩn phần hình ảnh vượt ra ngoài border-radius */
+}
+
+.banner img {
+  display: block; /* Loại bỏ khoảng trắng thừa dưới hình ảnh */
+  width: 100%; /* Hình ảnh chiếm hết chiều rộng banner */
+  height: auto; /* Tự động điều chỉnh chiều cao theo tỷ lệ */
+}
+
+
+/* --- Danh mục sản phẩm --- */
+.category-list {
+  margin-bottom: 30px;
+  text-align: center; /* Căn giữa danh mục */
+}
+
+.category-list ul {
+  list-style: none;
+  padding: 0;
+  display: inline-block; /* Để ul chỉ rộng bằng nội dung */
+}
+
+.category-list li {
+  display: inline-block; /* Hiển thị danh mục trên cùng một hàng */
+  margin: 0 15px;
+}
+
+.category-list a {
+  display: block; /* Để link có thể click được toàn bộ khu vực */
+  padding: 10px 20px;
+  background-color: #f8bbd0;
+  border-radius: 20px; /* Bo tròn hình viên thuốc */
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.category-list a:hover {
+  background-color: #f48fb1;
+  color: white;
+}
+
+
+/* --- Sản phẩm nổi bật / Danh sách sản phẩm --- */
+.product-list {
+  display: grid; /* Sử dụng grid layout cho bố cục sản phẩm */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+  gap: 20px; /* Khoảng cách giữa các sản phẩm */
+}
+
+.product-item {
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Tạo hiệu ứng đổ bóng nhẹ */
+  transition: transform 0.3s ease; /* Hiệu ứng scale khi hover */
+  overflow: hidden; /* Đảm bảo nội dung không tràn ra ngoài border-radius */
+  position: relative; /* Cần thiết để định vị khung trái tim */
+}
+
+.product-item:hover {
+  transform: scale(1.05); /* Phóng to sản phẩm khi hover */
+}
+
+.product-item img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px; /* Căn giữa hình ảnh và tạo khoảng cách bên dưới */
+  border-radius: 5px;
+}
+
+.product-item h4 {
+  color: #f06292; /* Màu hồng đậm cho tên sản phẩm */
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 1.2em;
+}
+
+.product-item .breed {
+  color: #777;
+  font-style: italic;
+  margin-bottom: 8px;
+}
+
+.product-item .price {
+  font-weight: bold;
+  color: #e91e63; /* Hồng tươi cho giá */
+  margin-bottom: 10px;
+}
+
+.product-item .description {
+  color: #555;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+/* --- Khung sản phẩm hình trái tim --- */
+.product-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white; /* Màu nền của khung trái tim */
+  border-radius: 10px; /* Bo tròn góc tổng thể */
+  clip-path: path('M0 25 C25 0, 75 0, 100 25 L100 75 C75 100, 25 100, 0 75 Z'); /* Hình trái tim */
+  z-index: -1; /* Đưa khung trái tim xuống dưới nội dung sản phẩm */
+  border: 2px solid #f48fb1; /* Viền hồng cho khung trái tim */
+  box-sizing: border-box; /* Đảm bảo border nằm trong kích thước phần tử */
+}
+
+
+/* --- Nút "Xem chi tiết" và "Thêm vào giỏ hàng" --- */
+.product-item a, .product-item button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background-color: #f06292; /* Hồng đậm cho nút */
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 5px;
+}
+
+.product-item a:hover, .product-item button:hover {
+  background-color: #e91e63; /* Hồng tươi hơn khi hover */
+}
+
+
+/* --- Trang chi tiết sản phẩm --- */
+.product-detail {
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  margin: 20px auto;
+  max-width: 800px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.product-detail h2 {
+  color: #f06292;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 2em;
+}
+
+.product-detail img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
+  border-radius: 8px;
+}
+
+.product-detail .detail-info {
+  text-align: left;
+}
+
+.product-detail .detail-info p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.product-detail .detail-info .price {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #e91e63;
+  margin-bottom: 20px;
+}
+
+.product-detail form, .product-detail a {
+  display: inline-block;
+  margin-top: 15px;
+}
+
+
+/* --- Trang giỏ hàng --- */
+.cart {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 900px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.cart h2 {
+  color: #f06292;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 2em;
+  text-align: center;
+}
+
+.cart ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cart li {
+  padding: 15px 0;
+  border-bottom: 1px dashed #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart li:last-child {
+  border-bottom: none; /* Loại bỏ border-bottom ở item cuối cùng */
+}
+
+.cart .cart-item-info {
+  flex-grow: 1; /* Để thông tin sản phẩm chiếm phần còn lại */
+  margin-right: 20px;
+}
+
+.cart .cart-item-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.cart .cart-item-quantity {
+  color: #777;
+}
+
+.cart .cart-item-price {
+  font-weight: bold;
+  color: #e91e63;
+}
+
+.cart .cart-total {
+  text-align: right;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #f06292;
+}
+
+.cart a, .cart button {
+  margin-top: 20px;
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #777;
+  border-top: 1px solid #ddd;
+  margin-top: 50px;
+}
+/* --- CSS cho Slideshow Banner --- */
+.slideshow-container {
+  max-width: 1200px; /* Hoặc chiều rộng banner mong muốn */
+  position: relative;
+  margin: auto;
+  border-radius: 8px; /* Bo tròn góc banner */
+  overflow: hidden; /* Ẩn hình ảnh thừa khi chuyển động */
+}
+
+.slide {
+  display: none; /* Ẩn tất cả các slide mặc định */
+  width: 100%; /* Slide chiếm toàn bộ chiều rộng container */
+}
+
+.slide img {
+  width: 100%; /* Hình ảnh chiếm toàn bộ chiều rộng slide */
+  height: auto;
+  vertical-align: middle;
+}
+
+/* Hiệu ứng Fade */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s; /* Thời gian chuyển cảnh */
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* Ẩn slide mặc định và hiển thị slide đầu tiên khi trang tải */
+.slideshow-container .slide:first-child {
+    display: block;
+}
+
+/* --- CSS cho nút điều khiển Slideshow --- */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgba(0,0,0,0.4); /* Nền đen mờ */
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8); /* Nền đen đậm hơn khi hover */
+}

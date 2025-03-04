@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h2 Giỏ hàng của bạn
+  .cart
+    if cart && cart.length > 0
+      ul
+        each item in cart
+          li
+            | #{item.product.name} - Số lượng: #{item.quantity} - Giá: #{item.product.price * item.quantity} VNĐ
+      p Tổng cộng: #{cart.reduce((total, item) => total + item.product.price * item.quantity, 0)} VNĐ
+    else
+      p Giỏ hàng của bạn đang trống.
+    a(href="/products") Tiếp tục mua sắm

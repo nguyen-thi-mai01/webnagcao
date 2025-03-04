@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h2 Chi tiết sản phẩm
+  .product-detail
+    h3= product.name
+    p Loài: #{product.breed}
+    p Giá: #{product.price} VNĐ
+    p Mô tả: #{product.description}
+    // Thêm hình ảnh sản phẩm - ĐÃ SỬA DỤNG INTERPOLATION
+    if product.image
+      img(src="#{product.image}", alt="#{product.name}", style="max-width: 400px; max-height: 400px;")
+    else
+      p Không có hình ảnh
+    br
+    form(action="/cart/add/#{product._id}", method="post")
+      button(type="submit") Thêm vào giỏ hàng
+    a(href="/products") Quay lại danh sách sản phẩm

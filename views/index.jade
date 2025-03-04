@@ -1,0 +1,46 @@
+extends layout
+
+block content
+  .container
+    .banner.slideshow-container
+      .slide.fade
+        img(src="https://file.hstatic.net/200000108863/file/minh_hoa_blog_2023__1__2f7c59f1db6047a0a84cc6229b13e7ce_grande.png", alt="Banner Shop Mèo Lười 1")
+      .slide.fade
+        img(src="https://cellphones.com.vn/sforum/wp-content/uploads/2024/02/avatar-anh-meo-cute-3.jpg", alt="Banner Shop Mèo Lười 2")
+      .slide.fade
+        img(src="https://moc247.com/wp-content/uploads/2023/12/loa-mat-voi-101-hinh-anh-avatar-meo-cute-dang-yeu-dep-mat_4.jpg", alt="Banner Shop Mèo Lười 3")
+      .slide.fade
+        img(src="https://i.pinimg.com/550x/94/7e/db/947edbbf6ced34863fc8702ed29ef79f.jpg", alt="Banner Shop Mèo Lười 4")
+
+    .category-list
+      h3 Danh mục sản phẩm mèo
+      ul
+        li
+          a(href="/products?category=Mèo Anh lông ngắn") Mèo Anh lông ngắn
+        li
+          a(href="/products?category=Mèo Anh lông dài") Mèo Anh lông dài
+        li
+          a(href="/products?category=Mèo Ba Tư") Mèo Ba Tư
+        li
+          a(href="/products?category=Mèo Munchkin") Mèo Munchkin
+
+    h3 Sản phẩm nổi bật
+    .product-list
+      if products && products.length > 0
+        each product in products
+          .product-item
+            if product.image
+              img(src=product.image, alt=product.name) 
+            else
+              p Không có hình ảnh
+            h4= product.name
+            p.breed Loài: #{product.breed}
+            p.price Giá: #{product.price} VNĐ
+            p.description.short-description= product.description
+            a(href="/products/#{product._id}") Xem chi tiết
+            form(action="/cart/add/#{product._id}", method="post")
+              button(type="submit") Thêm vào giỏ hàng
+      else
+        p Không có sản phẩm nào.
+      if error
+        p.error Lỗi: #{error}
