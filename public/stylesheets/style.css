@@ -1,60 +1,57 @@
-/* ... CSS hiện tại của bạn ... */
 
-/* --- Thiết kế lại giao diện --- */
 
 body {
-  font-family: 'Arial', sans-serif; /* Ví dụ: Chọn font chữ khác */
-  background-color: #ffe0e6; /* Vẫn giữ màu hồng nhạt làm nền */
-  color: #333; /* Màu chữ tối hơn để dễ đọc trên nền hồng */
-  margin: 0; /* Loại bỏ margin mặc định của body */
+  font-family: 'Arial', sans-serif; 
+  background-color: #ffe0e6;
+  color: #333; 
+  margin: 0; 
   padding: 0;
 }
 
 .container {
-  max-width: 1200px; /* Giới hạn chiều rộng nội dung trang */
-  margin: 0 auto; /* Căn giữa trang */
+  max-width: 1200px; 
+  margin: 0 auto; 
   padding: 20px;
 }
 
 /* --- Header --- */
 nav {
-  background-color: #f8bbd0; /* Hồng nhạt cho navbar */
+  background-color: #f8bbd0; 
   padding: 15px 20px;
   border-radius: 8px;
   margin-bottom: 20px;
-  display: flex; /* Sử dụng flexbox để căn chỉnh các phần tử trong nav */
-  justify-content: space-between; /* Căn đều khoảng cách giữa logo và menu */
-  align-items: center; /* Căn giữa theo chiều dọc */
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
 }
 
 nav .logo {
   font-size: 24px;
   font-weight: bold;
-  color: #f06292; /* Màu hồng đậm cho logo */
+  color: #f06292; 
   text-decoration: none;
 }
 
 nav ul {
-  list-style: none; /* Loại bỏ dấu chấm mặc định của list */
+  list-style: none; 
   padding: 0;
   margin: 0;
-  display: flex; /* Hiển thị các menu item trên cùng một hàng */
-}
+  display: flex; 
 
 nav li {
-  margin-left: 20px; /* Khoảng cách giữa các menu item */
+  margin-left: 20px; 
 }
 
 nav a {
   text-decoration: none;
-  color: #555; /* Màu chữ cho menu link */
+  color: #555; 
   padding: 10px 15px;
   border-radius: 5px;
-  transition: background-color 0.3s ease, color 0.3s ease; /* Hiệu ứng hover mượt mà */
+  transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
 nav a:hover {
-  background-color: #f48fb1; /* Hồng đậm hơn khi hover */
+  background-color: #f48fb1; 
   color: white;
 }
 
@@ -63,38 +60,38 @@ nav a:hover {
 .banner {
   margin-bottom: 30px;
   border-radius: 8px;
-  overflow: hidden; /* Ẩn phần hình ảnh vượt ra ngoài border-radius */
+  overflow: hidden; 
 }
 
 .banner img {
-  display: block; /* Loại bỏ khoảng trắng thừa dưới hình ảnh */
-  width: 100%; /* Hình ảnh chiếm hết chiều rộng banner */
-  height: auto; /* Tự động điều chỉnh chiều cao theo tỷ lệ */
+  display: block; 
+  width: 100%; 
+  height: auto; 
 }
 
 
 /* --- Danh mục sản phẩm --- */
 .category-list {
   margin-bottom: 30px;
-  text-align: center; /* Căn giữa danh mục */
+  text-align: center; 
 }
 
 .category-list ul {
   list-style: none;
   padding: 0;
-  display: inline-block; /* Để ul chỉ rộng bằng nội dung */
+  display: inline-block; 
 }
 
 .category-list li {
-  display: inline-block; /* Hiển thị danh mục trên cùng một hàng */
+  display: inline-block; 
   margin: 0 15px;
 }
 
 .category-list a {
-  display: block; /* Để link có thể click được toàn bộ khu vực */
+  display: block; 
   padding: 10px 20px;
   background-color: #f8bbd0;
-  border-radius: 20px; /* Bo tròn hình viên thuốc */
+  border-radius: 20px; 
   text-decoration: none;
   color: #333;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -109,8 +106,8 @@ nav a:hover {
 /* --- Sản phẩm nổi bật / Danh sách sản phẩm --- */
 .product-list {
   display: grid; /* Sử dụng grid layout cho bố cục sản phẩm */
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
-  gap: 20px; /* Khoảng cách giữa các sản phẩm */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  gap: 20px; 
 }
 
 .product-item {
@@ -118,26 +115,26 @@ nav a:hover {
   border-radius: 10px;
   padding: 15px;
   text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Tạo hiệu ứng đổ bóng nhẹ */
-  transition: transform 0.3s ease; /* Hiệu ứng scale khi hover */
-  overflow: hidden; /* Đảm bảo nội dung không tràn ra ngoài border-radius */
-  position: relative; /* Cần thiết để định vị khung trái tim */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+  transition: transform 0.3s ease; 
+  overflow: hidden; 
+  position: relative; 
 }
 
 .product-item:hover {
-  transform: scale(1.05); /* Phóng to sản phẩm khi hover */
+  transform: scale(1.05); 
 }
 
 .product-item img {
   max-width: 100%;
   height: auto;
   display: block;
-  margin: 0 auto 10px; /* Căn giữa hình ảnh và tạo khoảng cách bên dưới */
+  margin: 0 auto 10px; 
   border-radius: 5px;
 }
 
 .product-item h4 {
-  color: #f06292; /* Màu hồng đậm cho tên sản phẩm */
+  color: #f06292; 
   margin-top: 0;
   margin-bottom: 5px;
   font-size: 1.2em;
@@ -151,7 +148,7 @@ nav a:hover {
 
 .product-item .price {
   font-weight: bold;
-  color: #e91e63; /* Hồng tươi cho giá */
+  color: #e91e63; 
   margin-bottom: 10px;
 }
 
@@ -169,12 +166,12 @@ nav a:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background: white; /* Màu nền của khung trái tim */
-  border-radius: 10px; /* Bo tròn góc tổng thể */
-  clip-path: path('M0 25 C25 0, 75 0, 100 25 L100 75 C75 100, 25 100, 0 75 Z'); /* Hình trái tim */
-  z-index: -1; /* Đưa khung trái tim xuống dưới nội dung sản phẩm */
-  border: 2px solid #f48fb1; /* Viền hồng cho khung trái tim */
-  box-sizing: border-box; /* Đảm bảo border nằm trong kích thước phần tử */
+  background: white; 
+  border-radius: 10px; 
+  clip-path: path('M0 25 C25 0, 75 0, 100 25 L100 75 C75 100, 25 100, 0 75 Z');
+  z-index: -1; 
+  border: 2px solid #f48fb1; 
+  box-sizing: border-box; 
 }
 
 
@@ -184,7 +181,7 @@ nav a:hover {
   padding: 10px 20px;
   border: none;
   border-radius: 20px;
-  background-color: #f06292; /* Hồng đậm cho nút */
+  background-color: #f06292; 
   color: white;
   text-decoration: none;
   cursor: pointer;
@@ -193,7 +190,7 @@ nav a:hover {
 }
 
 .product-item a:hover, .product-item button:hover {
-  background-color: #e91e63; /* Hồng tươi hơn khi hover */
+  background-color: #e91e63; 
 }
 
 
@@ -277,11 +274,11 @@ nav a:hover {
 }
 
 .cart li:last-child {
-  border-bottom: none; /* Loại bỏ border-bottom ở item cuối cùng */
+  border-bottom: none; 
 }
 
 .cart .cart-item-info {
-  flex-grow: 1; /* Để thông tin sản phẩm chiếm phần còn lại */
+  flex-grow: 1; 
   margin-right: 20px;
 }
 
@@ -321,20 +318,20 @@ footer {
 }
 /* --- CSS cho Slideshow Banner --- */
 .slideshow-container {
-  max-width: 1200px; /* Hoặc chiều rộng banner mong muốn */
+  max-width: 1200px; 
   position: relative;
   margin: auto;
-  border-radius: 8px; /* Bo tròn góc banner */
-  overflow: hidden; /* Ẩn hình ảnh thừa khi chuyển động */
+  border-radius: 8px; 
+  overflow: hidden; 
 }
 
 .slide {
-  display: none; /* Ẩn tất cả các slide mặc định */
-  width: 100%; /* Slide chiếm toàn bộ chiều rộng container */
+  display: none; 
+  width: 100%; 
 }
 
 .slide img {
-  width: 100%; /* Hình ảnh chiếm toàn bộ chiều rộng slide */
+  width: 100%; 
   height: auto;
   vertical-align: middle;
 }
@@ -342,7 +339,7 @@ footer {
 /* Hiệu ứng Fade */
 .fade {
   animation-name: fade;
-  animation-duration: 1.5s; /* Thời gian chuyển cảnh */
+  animation-duration: 1.5s; 
 }
 
 @keyframes fade {
@@ -378,5 +375,5 @@ footer {
 }
 
 .prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8); /* Nền đen đậm hơn khi hover */
+  background-color: rgba(0,0,0,0.8);
 }
